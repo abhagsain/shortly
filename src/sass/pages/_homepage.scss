@@ -1,0 +1,177 @@
+.container {
+  // max-width: 80%;
+  max-width: 80%;
+  margin: 0 auto;
+  // border: 2px solid $color-gray-1;
+  text-align: start;
+  width: 100%;
+
+  @include respond(tabPort) {
+    max-width: 100%;
+  }
+
+  @include respond(phone) {
+    max-width: 100%;
+  }
+}
+
+.hero {
+  height: 80vh;
+  display: flex;
+  width: 100%;
+  //   padding: 0 2rem;
+
+  @include respond(tabPort) {
+    max-width: 768px;
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  @include respond(phone) {
+    height: 100vh;
+    overflow-x: hidden;
+  }
+
+  &__container {
+    display: flex;
+    // border: 2px solid $color-primary-1;
+    padding: 2rem 0rem;
+    width: 100%;
+    flex-direction: row;
+    height: 100%;
+
+    // align-content: center;
+    @include respond(phone) {
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      //   align-items: ce;
+    }
+  }
+
+  &__text {
+    width: 50%;
+
+    // border: 2px solid $color-gray-3;
+
+    align-self: center;
+
+    @include respond(tabPort) {
+      width: 50%;
+    }
+
+    @include respond(phone) {
+      // max-width: 70rem;
+      width: 100%;
+      height: 50%;
+      text-align: center;
+      margin-top: 5rem;
+    }
+  }
+
+  &__heading {
+    font-size: 7rem;
+    line-height: 1.2;
+    font-weight: bold;
+
+    @include respond(tabLand) {
+      font-size: 5.5rem;
+    }
+
+    @include respond(tabPort) {
+      font-size: 4.5rem;
+    }
+
+    @include respond(phone) {
+      font-size: 5rem;
+    }
+  }
+
+  &__subheading {
+    font-size: 2rem;
+    color: $color-gray-2;
+    margin: 0rem 0 2rem 0;
+
+    @include respond(phone) {
+      font-size: 2rem;
+      padding: 0 4rem;
+      margin: 3rem 0 3rem 0;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 50%;
+    right: -5%;
+    z-index: -1;
+    max-width: 75rem;
+    max-height: 70%;
+    // border: 2px solid blue;
+    align-self: center;
+
+    @include respond(tabLand) {
+      //   border: 2px solid red;
+      right: -5%;
+      height: 70%;
+    }
+
+    @include respond(tabPort) {
+      right: 0%;
+      height: 70%;
+      align-self: center;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+      top: 0;
+      height: auto;
+      right: -25%;
+      align-self: flex-end;
+    }
+  }
+
+  &__image-content {
+    height: 100%;
+
+    @include respond(tabPort) {
+      //   width: 120%;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+      // heig
+    }
+  }
+}
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1rem 2.5rem;
+  font-weight: 700;
+  color: $color-gray-3;
+  background: $color-gray-1;
+  border-radius: 100px;
+  transition: all 0.2s;
+
+  @include respond(tabPort) {
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
+  @include respond(phone) {
+    font-weight: 500;
+    font-size: 2.5rem;
+  }
+}
+
+.btn--blue:link,
+.btn--blue:visited {
+  background: $color-primary-1;
+  color: white;
+  // letter-spacing: 1px;
+}
+
+.btn--blue:hover {
+  opacity: 0.6;
+}

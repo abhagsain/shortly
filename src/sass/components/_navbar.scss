@@ -1,0 +1,85 @@
+.nav {
+  height: 15vh;
+  display: flex;
+  color: white;
+  align-items: center;
+  max-width: 80%;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  align-content: center;
+
+  @include respond(tabPort) {
+    max-width: 100%;
+    padding: 0 2rem;
+  }
+
+  &--brand:link,
+  &--brand:visited {
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: bold;
+    color: $color-gray-3;
+    margin-right: 3rem;
+
+    @include respond(phone) {
+      font-size: 4rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    @include respond(tabPort) {
+      display: none;
+    }
+
+  }
+
+
+  &__left,
+  &__right {
+
+    a:link,
+    a:visited {
+      text-decoration: none;
+      color: $color-gray-2;
+      font-size: 1.6rem;
+      font-weight: 500;
+      font-weight: bold;
+
+    }
+
+    a:hover {
+      color: $color-gray-3;
+    }
+  }
+
+  &__left,
+  &__right {
+    a:not(:last-child) {
+      margin-right: 4rem;
+    }
+  }
+
+  &__btn--cta {
+    // margin-right: 2rem;
+    background: $color-primary-1;
+    padding: 1rem 2.5rem;
+    color: white !important;
+    // color: darken($color-primary-1, 20%) !important;
+    border-radius: 100px;
+    transition: all .2s;
+
+    &:hover {
+      opacity: .6;
+    }
+  }
+
+  @include respond(phone) {
+    padding: 0 2rem;
+  }
+}

@@ -10,17 +10,17 @@ html {
 
     font-size: 62.5%;
 
-    // @include respond(tabLand) {
-    //     font-size: 56.25%;
-    // }
+    @include respond(tabLand) {
+        font-size: 56.25%;
+    }
 
-    // @include respond(tabPort) {
-    //     font-size: 50%;
-    // }
+    @include respond(tabPort) {
+        font-size: 50%;
+    }
 
-    // @include respond(phone) {
-    //     font-size: 42.5%;
-    // }
+    @include respond(phone) {
+        font-size: 42.5%;
+    }
 
 
 }
@@ -32,5 +32,6 @@ body {
     font-weight: 400;
     line-height: 1.7;
     color: #333;
+    overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
 }
