@@ -22,6 +22,7 @@
   //   padding: 0 2rem;
 
   @include respond(tabPort) {
+    overflow-x: hidden;
     max-width: 768px;
     width: 100%;
     padding: 0 2rem;
@@ -169,9 +170,13 @@
 .btn--blue:visited {
   background: $color-primary-1;
   color: white;
-  // letter-spacing: 1px;
 }
+
 
 .btn--blue:hover {
   opacity: 0.6;
+}
+
+.btn--blue:active {
+  opacity: 1;
 }

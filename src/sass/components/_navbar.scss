@@ -77,6 +77,10 @@
     &:hover {
       opacity: .6;
     }
+
+    &:active {
+      opacity: 1;
+    }
   }
 
   @include respond(phone) {
