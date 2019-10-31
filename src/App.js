@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Search from "./components/Search";
 import URLItem from "./components/URLItem";
 import CTA from "./components/CTA";
+import Footer from "./components/Footer";
 export default function App() {
   return (
     <div>
@@ -14,7 +15,9 @@ export default function App() {
         <div className="section-2">
           <Search error={false} />
         </div>
-        <CTA /> */}
+         */}
+      <CTA />
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,35 @@
+
+.cta {
+  padding: 5rem 0;
+  background: $color-primary-2 url("../../images/bg-boost-desktop.svg");
+
+  @include respond(tabPort) {
+
+    background: $color-primary-2 url("../../images/bg-boost-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__heading {
+    font-size: 4.5rem;
+    color: $color-smoke-white;
+
+    @include respond(tabPort) {
+      font-size: 4rem;
+    }
+  }
+}
+
+.btn--cta {
+  margin-top: 2rem;
+
+}
