@@ -3,6 +3,7 @@ import "./sass/index.scss";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Search from "./components/Search";
+import URLItem from "./components/URLItem";
 export default function App() {
   return (
     <div>

@@ -8,6 +8,13 @@
         max-width: 80%;
         width: 100%;
         background: $color-primary-2 url("../../images//bg-shorten-desktop.svg");
+
+        @include respond(tabPort) {
+            background: $color-gray-2 url("../../images/bg-shorten-mobile.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
         padding: 6rem;
         margin: 0 auto;
         background-size: cover;
@@ -16,6 +23,10 @@
         // margin-top: -10rem;
         position: relative;
         top: $search-margin;
+
+        @include respond(tabLand) {
+            top: -7rem;
+        }
 
         @include respond(tabLand) {
             padding: 4rem 3rem;
