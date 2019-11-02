@@ -25,9 +25,9 @@ export default function Search({ error }) {
           </span>
         )}
       </div>
-      {/* <URLItem />
-      <URLItem />
-      <URLItem /> */}
+      <URLItem input={`https://todoist.com`} output={`https://bit.ly/a2dss1`} />
+      <URLItem input={`https://todoist.com`} output={`https://bit.ly/a2dss2`} />
+      <URLItem input={`https://todoist.com`} output={`https://bit.ly/a2dss3`} />
     </div>
   );
 }

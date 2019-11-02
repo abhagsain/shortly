@@ -1,93 +1,95 @@
 .url {
-    &__container {
-        display: flex;
-        background: white;
-        padding: 2rem 5rem;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        top: -7rem;
-        margin-bottom: 2rem;
-        border-radius: 10px;
-
-        @include respond(tabLand) {
-            top: -4rem;
-        }
-
-        @include respond(tabPort) {
-            flex-direction: column;
-            top: -2rem;
-            padding: 0;
-        }
-    }
-
-    &__submitted,
-    &__output {
-        font-size: 2rem;
-    }
-
-    &__output {
-        margin-right: 2rem;
-        color: $color-primary-1;
-
-        @include respond(tabPort) {
-            margin-right: 0;
-            margin-bottom: 2rem;
-        }
-    }
-
-    &__left,
-    &__right {
-        @include respond(tabPort) {
-            padding: 2rem;
-        }
-    }
-
-    &__left {
-        overflow: hidden;
-        display: inline-block;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-
-        @include respond(tabPort) {
-            width: 100%;
-            // border-bottom: 2px solid $color-secondary-2;
-            border-bottom: .5px solid $color-gray-1;
-            // margin-bottom: 2rem;
-        }
-
-    }
-
-    &__right {
-        display: flex;
-        align-items: center;
-
-        @include respond(tabPort) {
-            width: 100%;
-            align-items: flex-start;
-            flex-direction: column;
-        }
-    }
-}
-
-.btn--url {
-    background: $color-primary-1;
-    color: white;
-    padding: 1rem 5rem;
-    font-size: 1.5rem;
+  &__container {
+    display: flex;
+    background: white;
+    padding: 2rem 5rem;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: -7rem;
+    margin-bottom: 2rem;
     border-radius: 10px;
 
+    @include respond(tabLand) {
+      top: -4rem;
+    }
+
     @include respond(tabPort) {
-        width: 100%;
-        text-align: center;
-        font-size: 2rem;
+      flex-direction: column;
+      top: -2rem;
+      padding: 0;
     }
+  }
 
-    &:hover {
-        cursor: pointer;
-    }
+  &__submitted,
+  &__output {
+    font-size: 2rem;
+  }
 
-    &:active {
-        background: $color-primary-2;
+  &__output {
+    margin-right: 2rem;
+    color: $color-primary-1;
+
+    @include respond(tabPort) {
+      margin-right: 0;
+      margin-bottom: 2rem;
     }
+  }
+
+  &__left,
+  &__right {
+    @include respond(tabPort) {
+      padding: 2rem;
+    }
+  }
+
+  &__left {
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @include respond(tabPort) {
+      width: 100%;
+      // border-bottom: 2px solid $color-secondary-2;
+      border-bottom: 0.5px solid $color-gray-1;
+      // margin-bottom: 2rem;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+
+    @include respond(tabPort) {
+      width: 100%;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+}
+
+.btn--url,
+.btn--clicked {
+  background: $color-primary-1;
+  color: white;
+  padding: 1rem 5rem;
+  font-size: 1.5rem;
+  border-radius: 10px;
+
+  @include respond(tabPort) {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.btn--clicked {
+  background: $color-primary-2;
+  &:active {
+    background: lighten($color-primary-2, 20%);
+  }
 }

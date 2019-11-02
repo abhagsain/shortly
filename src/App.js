@@ -11,11 +11,9 @@ export default function App() {
     <div>
       <Navbar />
       <div className="container">{<Hero />}</div>
-      {/* 
-        <div className="section-2">
-          <Search error={false} />
-        </div>
-         */}
+      <div className="section-2">
+        <Search error={false} />
+      </div>
       <CTA />
       <Footer />
     </div>
