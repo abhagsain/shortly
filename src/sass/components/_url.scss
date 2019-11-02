@@ -21,6 +21,13 @@
     }
   }
 
+  &__submitted {
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+    // white-space: nowrap;
+    // border: 2px solid red;
+  }
   &__submitted,
   &__output {
     font-size: 2rem;
@@ -44,11 +51,6 @@
   }
 
   &__left {
-    overflow: hidden;
-    display: inline-block;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-
     @include respond(tabPort) {
       width: 100%;
       // border-bottom: 2px solid $color-secondary-2;

@@ -1,21 +1,20 @@
-import React from "react";
+import React, { Component } from "react";
 import "./sass/index.scss";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Search from "./components/Search";
-import URLItem from "./components/URLItem";
-import CTA from "./components/CTA";
+import CallToAction from "./components/CTA";
 import Footer from "./components/Footer";
-export default function App() {
-  return (
-    <div>
-      <Navbar />
-      <div className="container">{<Hero />}</div>
-      <div className="section-2">
+export default class App extends Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Navbar />
+        <Hero />
         <Search error={false} />
-      </div>
-      <CTA />
-      <Footer />
-    </div>
-  );
+        <CallToAction />
+        <Footer />
+      </React.Fragment>
+    );
+  }
 }

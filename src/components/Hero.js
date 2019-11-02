@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <div>
+    <div className="container">
       <div className="hero">
         <div className="hero__container">
           <div className="hero__text">
