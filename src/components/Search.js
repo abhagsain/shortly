@@ -15,16 +15,29 @@ export default class Search extends Component {
       value
     );
   };
-  handleURLSubmit = () => {
+
+  getShortenedURL = async () => {
+    const { input } = this.state;
+    const res = await fetch("https://rel.ink/api/links/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url: input }),
+    }).then(res => res.json());
+    const { values } = JSON.parse(JSON.stringify(this.state));
+    values.push({ input, output: `https://rel.ink/${res.hashid}` });
+    this.setState({ values, input: "" });
+  };
+  handleURLSubmit = async () => {
     const { input } = this.state;
     // Check if it's the valid url
+    /* 
+      Make an HTTP request to URL: https://rel.ink/api/links/
+     */
     if (input) {
       if (!this.validateUrl(input)) {
         return this.setState({ error: true });
       } else {
-        const { values } = JSON.parse(JSON.stringify(this.state));
-        values.push({ input, output: "https://bit.ly/aAsdfs4" });
-        this.setState({ values, input: "" });
+        this.getShortenedURL();
       }
     }
   };
