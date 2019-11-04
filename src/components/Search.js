@@ -4,10 +4,7 @@ import URLItem from "./URLItem";
 export default class Search extends Component {
   state = {
     input: "",
-    values: [
-      { input: "https://todoist.com", output: "http://bit.ly/12s23s1" },
-      { input: "https://todoist.com", output: "http://bit.ly/12s23s2" },
-    ],
+    values: [],
     error: false,
   };
   validateUrl = value => {
@@ -16,6 +13,18 @@ export default class Search extends Component {
     );
   };
 
+  async componentDidMount() {
+    const values = JSON.parse(localStorage.getItem("data")) || [];
+    if (values.length > 0) {
+      this.setState({ values });
+    } else {
+      console.log("NO data in the array");
+    }
+  }
+
+  addToLocalStorage = values => {
+    localStorage.setItem("data", JSON.stringify(values));
+  };
   getShortenedURL = async () => {
     const { input } = this.state;
     const res = await fetch("https://rel.ink/api/links/", {
@@ -25,26 +34,27 @@ export default class Search extends Component {
     }).then(res => res.json());
     const { values } = JSON.parse(JSON.stringify(this.state));
     values.push({ input, output: `https://rel.ink/${res.hashid}` });
+    this.addToLocalStorage(values);
     this.setState({ values, input: "" });
   };
+  componentWillUnmount() {
+    // console.log("Component will unmount");
+    // localStorage.setItem("data", JSON.stringify(this.state.values));
+  }
+
   handleURLSubmit = async () => {
     const { input } = this.state;
-    // Check if it's the valid url
-    /* 
-      Make an HTTP request to URL: https://rel.ink/api/links/
-     */
     if (input) {
       if (!this.validateUrl(input)) {
         return this.setState({ error: true });
       } else {
         this.getShortenedURL();
       }
+    } else {
+      return this.setState({ error: true });
     }
   };
   getUniqueID = function() {
-    // Math.random should be unique because of its seeding algorithm.
-    // Convert it to base 36 (numbers + letters), and grab the first 9 characters
-    // after the decimal.
     return (
       "_" +
       Math.random()
@@ -97,6 +107,71 @@ export default class Search extends Component {
               key={this.getUniqueID()}
             />
           ))}
+          <div className="container">
+            <div className="stat__container">
+              <div className="heading-box">
+                <h2 className="stat__heading">Advanced Statistics</h2>
+                <p className="stat__subheading">
+                  Track how your links are performing across the web with our
+                  advanced statistics dashboard.
+                </p>
+              </div>
+              <div className="spec__container">
+                <div className="spec__line" />
+                <div className="spec__item">
+                  <div className="spec__item-logo">
+                    <img
+                      src={require("../images/icon-brand-recognition.svg")}
+                      alt=""
+                      srcSet={require("../images/icon-brand-recognition.svg")}
+                    />
+                  </div>
+                  <div className="spec__content">
+                    <h3 className="spec__item-heading">Brand Recognition</h3>
+                    <p className="spec__item-description">
+                      Boost your brand regonition with each click. Generic links
+                      don't mean a thing. Brand links help instil confidence in
+                      your content.
+                    </p>
+                  </div>
+                </div>
+                <div className="spec__item">
+                  <div className="spec__item-logo">
+                    <img
+                      src={require("../images/icon-detailed-records.svg")}
+                      alt="Shortly"
+                      srcSet={require("../images/icon-detailed-records.svg")}
+                    />
+                  </div>
+                  <div className="spec__content">
+                    <h3 className="spec__item-heading">Detailed Records</h3>
+                    <p className="spec__item-description">
+                      Gain insights into who is clicking your links. Knowing
+                      when and where people engage with your content helps
+                      inform better decisions.
+                    </p>
+                  </div>
+                </div>
+                <div className="spec__item">
+                  <div className="spec__item-logo">
+                    <img
+                      src={require("../images/icon-fully-customizable.svg")}
+                      alt=""
+                      srcSet={require("../images/icon-fully-customizable.svg")}
+                    />
+                  </div>
+                  <div className="spec__content">
+                    <h3 className="spec__item-heading">Fully Customizable</h3>
+                    <p className="spec__item-description">
+                      Improve brand awareness and content discoverability
+                      through customizable links, supercharing audience
+                      engagement.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

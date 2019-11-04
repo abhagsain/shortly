@@ -1,148 +1,145 @@
 .search {
+  @include respond(tabPort) {
+    padding: 0 2rem;
+  }
+
+  &__container {
+    max-width: 80%;
+    width: 100%;
+    background: $color-primary-2 url("../../images//bg-shorten-desktop.svg");
+
     @include respond(tabPort) {
-
-        padding: 0 2rem;
+      background: $color-primary-2 url("../../images/bg-shorten-mobile.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: right bottom;
     }
 
-    &__container {
-        max-width: 80%;
-        width: 100%;
-        background: $color-primary-2 url("../../images//bg-shorten-desktop.svg");
+    padding: 6rem;
+    margin: 0 auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    // margin-top: -10rem;
+    position: relative;
+    top: $search-margin;
 
-        @include respond(tabPort) {
-            background: $color-gray-2 url("../../images/bg-shorten-mobile.svg");
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        padding: 6rem;
-        margin: 0 auto;
-        background-size: cover;
-        background-repeat: no-repeat;
-        border-radius: 20px;
-        // margin-top: -10rem;
-        position: relative;
-        top: $search-margin;
-
-        @include respond(tabLand) {
-            top: -7rem;
-        }
-
-        @include respond(tabLand) {
-            padding: 4rem 3rem;
-        }
-
-        @include respond(tabPort) {
-            max-width: 100%;
-            padding: 4rem 2.5rem;
-            border-radius: 10px;
-        }
+    @include respond(tabLand) {
+      top: -7rem;
     }
 
-    &__main {
-        display: flex;
-        position: relative;
-
-        @include respond(tabPort) {
-            flex-direction: column;
-            justify-content: space-between;
-        }
+    @include respond(tabLand) {
+      padding: 4rem 3rem;
     }
 
-    &__input,
-    &__button {
-        font-size: 2rem;
-        padding: 1.5rem 4rem;
+    @include respond(tabPort) {
+      max-width: 100%;
+      padding: 4rem 2.5rem;
+      border-radius: 10px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    position: relative;
+
+    @include respond(tabPort) {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &__input,
+  &__button {
+    font-size: 2rem;
+    padding: 1.5rem 4rem;
+  }
+
+  &__input {
+    padding: 0 3rem;
+    flex: 1;
+    border-radius: 8px;
+    margin-right: 2rem;
+    outline: none;
+    border: none;
+    font-family: inherit;
+
+    @include respond(tabPort) {
+      flex-basis: 100%;
+      margin-right: 0;
+      padding: 1.5rem 2rem;
     }
 
-    &__input {
-        padding: 0 3rem;
-        flex: 1;
-        border-radius: 8px;
-        margin-right: 2rem;
-        outline: none;
-        border: none;
-        font-family: inherit;
-
-        @include respond(tabPort) {
-            flex-basis: 100%;
-            margin-right: 0;
-            padding: 1.5rem 2rem;
-
-        }
-
-        &::placeholder {
-            color: $color-gray-2;
-        }
-
-        &--error {
-            border: 2px solid $color-secondary-1;
-
-            &::placeholder {
-                color: $color-secondary-1;
-            }
-        }
+    &::placeholder {
+      color: $color-gray-2;
     }
 
-    &__button {
-        border-radius: 10px;
-        color: white;
-        background: $color-primary-1;
-        outline: none;
-        font-family: inherit;
-        border: none;
-        transition: all .2s;
+    &--error {
+      border: 2px solid $color-secondary-1;
 
-        &:hover {
-            cursor: pointer;
-        }
-
-        &:active {
-            background: lighten($color-primary-1, 20%);
-        }
-
-        @include respond(tabPort) {
-            margin-top: 1rem;
-        }
-    }
-
-    &__error-text--mobile,
-    &__error-text--desktop {
+      &::placeholder {
         color: $color-secondary-1;
-        font-size: 1.2rem;
-        display: inline-block;
+      }
+    }
+  }
 
-        @include respond(tabPort) {
-            font-size: 1.5rem;
-        }
+  &__button {
+    border-radius: 10px;
+    color: white;
+    background: $color-primary-1;
+    outline: none;
+    font-family: inherit;
+    border: none;
+    transition: all 0.2s;
+
+    &:hover {
+      cursor: pointer;
     }
 
-    &__error-text--mobile {
-        margin-top: 1rem;
-        // margin-bottom: 3rem;
-        display: none;
-
-        @include respond(tabPort) {
-            display: inline-block !important;
-        }
-
+    &:active {
+      background: lighten($color-primary-1, 20%);
     }
 
-    &__error-text--desktop {
-        position: absolute;
-        margin-top: .6rem;
-        display: inline-block;
-
-        @include respond(tabPort) {
-            display: none !important;
-        }
+    @include respond(tabPort) {
+      margin-top: 1rem;
     }
+  }
 
+  &__error-text--mobile,
+  &__error-text--desktop {
+    color: $color-secondary-1;
+    font-size: 1.2rem;
+    display: inline-block;
+
+    @include respond(tabPort) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__error-text--mobile {
+    margin-top: 1rem;
+    // margin-bottom: 3rem;
+    display: none;
+
+    @include respond(tabPort) {
+      display: inline-block !important;
+    }
+  }
+
+  &__error-text--desktop {
+    position: absolute;
+    margin-top: 0.6rem;
+    display: inline-block;
+
+    @include respond(tabPort) {
+      display: none !important;
+    }
+  }
 }
 
 .input__container {
-    height: 100%;
-    align-self: stretch;
-    // padding: 2rem 4rem;
-    border: 2px solid blue;
+  height: 100%;
+  align-self: stretch;
+  // padding: 2rem 4rem;
+  border: 2px solid blue;
 }

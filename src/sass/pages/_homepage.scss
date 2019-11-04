@@ -90,7 +90,7 @@
   &__subheading {
     font-size: 2rem;
     color: $color-gray-2;
-    margin: 0rem 0 2rem 0;
+    margin: 0.5rem 0 3rem 0;
 
     @include respond(phone) {
       font-size: 2rem;

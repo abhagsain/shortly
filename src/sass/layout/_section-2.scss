@@ -4,5 +4,121 @@
   background: $color-smoke-white;
   // position: relative;
   margin-top: $section-margin;
-  padding-bottom: 20rem;
+  padding-bottom: 18rem;
+}
+.stat {
+  &__heading {
+    font-size: 4rem;
+    font-weight: bold;
+    @include respond(tabPort) {
+      font-size: 4rem;
+    }
+  }
+  &__subheading {
+    display: inline-block;
+    font-size: 2rem;
+    color: $color-gray-2;
+    max-width: 70%;
+    @include respond(tabPort) {
+      font-size: 2rem;
+      max-width: 100%;
+    }
+  }
+}
+.spec {
+  &__container {
+    margin-top: 13rem;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    @include respond(tabPort) {
+      flex-direction: column;
+    }
+  }
+  &__line {
+    height: 10px;
+    background: $color-primary-1;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+    transform: translateY(-50%);
+    @include respond(tabPort) {
+      width: 10px;
+      height: 100%;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+  }
+  &__item {
+    padding: 3.5rem;
+    background: white;
+    border-radius: 10px;
+    position: relative;
+    width: 32%;
+    &:nth-child(3) {
+      top: 40px;
+    }
+    &:nth-child(4) {
+      top: 80px;
+    }
+    @include respond(tabLand) {
+      width: 32%;
+    }
+    @include respond(tabPort) {
+      text-align: center;
+      padding: 5rem;
+      max-width: 80%;
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+      margin: 0 auto;
+    }
+    @include respond(phone) {
+      max-width: 100%;
+    }
+
+    &-logo {
+      display: inline-block;
+      background: $color-primary-2;
+      padding: 2.5rem;
+      border-radius: 50%;
+      position: absolute;
+      top: -35px;
+      @include respond(tabPort) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    &-heading {
+      font-size: 2.5rem;
+      font-weight: 700;
+      @include respond(tabPort) {
+        font-size: 3.5rem;
+      }
+    }
+    &-description {
+      font-size: 1.7rem;
+      margin-top: 1rem;
+      color: $color-gray-2;
+      @include respond(tabPort) {
+        font-size: 2.2rem;
+      }
+    }
+  }
+  &__content {
+    margin-top: 4rem;
+  }
+}
+.heading-box {
+  text-align: center;
+  width: auto;
+  max-width: 80%;
+  margin: 0 auto;
+  @include respond(tabPort) {
+    max-width: 100%;
+  }
 }
