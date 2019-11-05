@@ -1,13 +1,19 @@
 import React, { useState, useRef } from "react";
 export default function URLItem(props) {
-  const [output, setOutput] = useState(props.output || null);
-  const [input, setInput] = useState(props.input || null);
+  const [output] = useState(props.output || null);
+  const [input] = useState(props.input || null);
+  const [copied, setCopied] = useState(null);
   const [clicked, setClicked] = useState(false);
-  const outputData = useRef(null);
+  const inputRef = useRef(null);
   const handleClick = () => {
-    if (!clicked) {
-      setClicked(true);
-    }
+    document.execCommand("copy");
+    inputRef.current.disabled = false;
+    inputRef.current.select();
+    const copy = document.execCommand("copy", true);
+    inputRef.current.selectionEnd = 0;
+    inputRef.current.disabled = true;
+    setCopied(copy);
+    setClicked(true);
   };
   return (
     <div className=" container">
@@ -16,10 +22,13 @@ export default function URLItem(props) {
           <p className="url__submitted">{input}</p>
         </div>
         <div className="url__right">
-          <p className="url__output" ref={outputData}>
-            {output}
-          </p>
-          {clicked ? (
+          <input
+            className="url__output"
+            ref={inputRef}
+            disabled
+            value={output}
+          />
+          {copied ? (
             <div className="btn btn--clicked">Copied</div>
           ) : (
             <div

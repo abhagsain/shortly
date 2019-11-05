@@ -1,8 +1,4 @@
 .search {
-  @include respond(tabPort) {
-    padding: 0 2rem;
-  }
-
   &__container {
     max-width: 80%;
     width: 100%;

@@ -34,9 +34,11 @@
   }
 
   &__output {
-    margin-right: 2rem;
     color: $color-primary-1;
-
+    border: none;
+    background: white;
+    font-family: inherit;
+    width: auto;
     @include respond(tabPort) {
       margin-right: 0;
       margin-bottom: 2rem;
@@ -62,7 +64,6 @@
   &__right {
     display: flex;
     align-items: center;
-
     @include respond(tabPort) {
       width: 100%;
       align-items: flex-start;

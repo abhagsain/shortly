@@ -5,6 +5,10 @@
   // position: relative;
   margin-top: $section-margin;
   padding-bottom: 18rem;
+  @include respond(tabPort) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 .stat {
   &__heading {

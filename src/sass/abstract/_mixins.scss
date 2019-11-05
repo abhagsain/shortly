@@ -1,42 +1,37 @@
 @mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin respond($breakpoint) {
-    @if $breakpoint==xs {
-
-        @media screen and (max-width: 20em) {
-            @content
-        }
+  @if $breakpoint==xs {
+    @media screen and (max-width: 20em) {
+      @content;
     }
+  }
 
-    @if $breakpoint==phone {
-
-        @media screen and (max-width: 600px) {
-            @content
-        }
+  @if $breakpoint==phone {
+    @media screen and (max-width: 600px) {
+      @content;
     }
+  }
 
-    @if $breakpoint==tabPort {
-
-        @media screen and (max-width: 768px) {
-            @content
-        }
+  @if $breakpoint==tabPort {
+    @media screen and (max-width: 768px) {
+      @content;
     }
+  }
 
-    @if $breakpoint==tabLand {
-
-        @media screen and (max-width: 1024px) {
-            @content
-        }
+  @if $breakpoint==tabLand {
+    @media screen and (max-width: 1024px) {
+      @content;
     }
+  }
 
-    @if $breakpoint==desktop {
-
-        @media screen and (min-width: 112.5em) {
-            @content
-        }
+  @if $breakpoint==desktop {
+    @media screen and (min-width: 112.5em) {
+      @content;
     }
+  }
 }
