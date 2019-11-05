@@ -1,8 +1,6 @@
 .container {
-  // max-width: 80%;
   max-width: 80%;
   margin: 0 auto;
-  // border: 2px solid $color-gray-1;
   text-align: start;
   width: 100%;
 
@@ -35,24 +33,19 @@
 
   &__container {
     display: flex;
-    // border: 2px solid $color-primary-1;
     padding: 2rem 0rem;
     width: 100%;
     flex-direction: row;
     height: 100%;
 
-    // align-content: center;
     @include respond(phone) {
       flex-direction: column-reverse;
       justify-content: space-between;
-      //   align-items: ce;
     }
   }
 
   &__text {
     width: 50%;
-
-    // border: 2px solid $color-gray-3;
 
     align-self: center;
 
@@ -61,7 +54,6 @@
     }
 
     @include respond(phone) {
-      // max-width: 70rem;
       width: 100%;
       height: 50%;
       text-align: center;
@@ -106,11 +98,9 @@
     z-index: -1;
     max-width: 75rem;
     max-height: 70%;
-    // border: 2px solid blue;
     align-self: center;
 
     @include respond(tabLand) {
-      //   border: 2px solid red;
       right: -5%;
       height: 70%;
     }
@@ -134,12 +124,10 @@
     height: 100%;
 
     @include respond(tabPort) {
-      //   width: 120%;
     }
 
     @include respond(phone) {
       width: 100%;
-      // heig
     }
   }
 }
