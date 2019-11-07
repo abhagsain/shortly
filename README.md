@@ -1,5 +1,5 @@
 # Shortly | URL Shotener
-Beautifully designed & complete a responsive application which uses Relink's API to shorten the URL's
+Beautifully designed & completely responsive application which uses Relink's API to shorten the URL's
 
 ## Live Demo
 [Click here to see it live](https://abhagsain.github.io/shortly/)
