@@ -2,6 +2,7 @@
   "name": "shortly",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://abhagsain.github.io/shortly/",
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.11.0",

@@ -16,31 +16,24 @@ export default function URLItem(props) {
     setClicked(true);
   };
   return (
-    <div className=" container">
-      <div className="url__container">
-        <div className="url__left">
-          <p className="url__submitted">{input}</p>
-        </div>
-        <div className="url__right">
-          <input
-            className="url__output"
-            ref={inputRef}
-            disabled
-            value={output}
-          />
-          {copied ? (
-            <div className="btn btn--clicked">Copied</div>
-          ) : (
-            <div
-              className="btn btn--url"
-              onClick={() => {
-                handleClick();
-              }}
-            >
-              Copy
-            </div>
-          )}
-        </div>
+    <div className="url__container">
+      <div className="url__left">
+        <p className="url__submitted">{input}</p>
+      </div>
+      <div className="url__right">
+        <input className="url__output" ref={inputRef} disabled value={output} />
+        {copied ? (
+          <div className="btn btn--clicked">Copied</div>
+        ) : (
+          <div
+            className="btn btn--url"
+            onClick={() => {
+              handleClick();
+            }}
+          >
+            Copy
+          </div>
+        )}
       </div>
     </div>
   );

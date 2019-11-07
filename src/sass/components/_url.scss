@@ -7,8 +7,11 @@
     align-items: center;
     position: relative;
     top: -7rem;
-    margin-bottom: 2rem;
+
     border-radius: 10px;
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
 
     @include respond(tabLand) {
       top: -4rem;

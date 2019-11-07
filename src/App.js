@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Specifications from "./components/Specifications";
 import URLItem from "./components/URLItem";
 import GlobalContext from "./components/GlobalContext";
+import Loading from "./components/Loading";
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +16,7 @@ export default class App extends Component {
       values: [],
       input: "",
       error: false,
-      loading: true,
+      loading: false,
       handleSubmit: this.handleSubmit,
       handleInputChange: this.handleInputChange,
     };
@@ -37,9 +38,10 @@ export default class App extends Component {
     const ID = this.getUniqueID();
     values.push({ ID, input, output: `https://rel.ink/${res.hashid}` });
     localStorage.setItem("data", JSON.stringify(values));
-    this.setState({ values, input: "" });
+    this.setState({ values, input: "", loading: false });
   };
   handleSubmit = async () => {
+    this.setState({ loading: true });
     const { input } = this.state;
     if (input) {
       if (!this.validateUrl(input)) {
@@ -69,7 +71,7 @@ export default class App extends Component {
     );
   };
   render() {
-    const { values } = this.state;
+    const { values, loading } = this.state;
 
     return (
       <GlobalContext.Provider value={this.state}>
@@ -77,9 +79,16 @@ export default class App extends Component {
         <Hero />
         <div className="section-2">
           <Search />
-          {values.map(value => (
-            <URLItem input={value.input} output={value.output} key={value.ID} />
-          ))}
+          <div className="container">
+            {values.map(value => (
+              <URLItem
+                input={value.input}
+                output={value.output}
+                key={value.ID}
+              />
+            ))}
+            {loading && <Loading />}
+          </div>
           <Specifications />
         </div>
         <CallToAction />
