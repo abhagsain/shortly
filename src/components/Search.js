@@ -22,6 +22,7 @@ export default class Search extends Component {
                   error: false,
                 })
               }
+              onKeyPress={e => this.context.handleEnter(e)}
               placeholder="Shorten a link here"
             />
 
