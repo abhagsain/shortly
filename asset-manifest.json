@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/shortly/static/css/main.fade6aab.chunk.css",
-    "main.js": "/shortly/static/js/main.01f728df.chunk.js",
-    "main.js.map": "/shortly/static/js/main.01f728df.chunk.js.map",
+    "main.css": "/shortly/static/css/main.5e71facc.chunk.css",
+    "main.js": "/shortly/static/js/main.d34e15cb.chunk.js",
+    "main.js.map": "/shortly/static/js/main.d34e15cb.chunk.js.map",
     "runtime-main.js": "/shortly/static/js/runtime-main.f479f9fa.js",
     "runtime-main.js.map": "/shortly/static/js/runtime-main.f479f9fa.js.map",
     "static/js/2.89bb490e.chunk.js": "/shortly/static/js/2.89bb490e.chunk.js",
     "static/js/2.89bb490e.chunk.js.map": "/shortly/static/js/2.89bb490e.chunk.js.map",
     "index.html": "/shortly/index.html",
-    "precache-manifest.744888e99148c83b4912ea150b84224d.js": "/shortly/precache-manifest.744888e99148c83b4912ea150b84224d.js",
+    "precache-manifest.633171d0cf174956316f62499c185f99.js": "/shortly/precache-manifest.633171d0cf174956316f62499c185f99.js",
     "service-worker.js": "/shortly/service-worker.js",
-    "static/css/main.fade6aab.chunk.css.map": "/shortly/static/css/main.fade6aab.chunk.css.map",
+    "static/css/main.5e71facc.chunk.css.map": "/shortly/static/css/main.5e71facc.chunk.css.map",
     "static/media/index.scss": "/shortly/static/media/bg-shorten-mobile.4a7a7f61.svg",
     "static/media/icon-brand-recognition.svg": "/shortly/static/media/icon-brand-recognition.1922b68a.svg",
     "static/media/icon-detailed-records.svg": "/shortly/static/media/icon-detailed-records.e3d9caa9.svg",
@@ -24,7 +24,7 @@
   "entrypoints": [
     "static/js/runtime-main.f479f9fa.js",
     "static/js/2.89bb490e.chunk.js",
-    "static/css/main.fade6aab.chunk.css",
-    "static/js/main.01f728df.chunk.js"
+    "static/css/main.5e71facc.chunk.css",
+    "static/js/main.d34e15cb.chunk.js"
   ]
 }
