@@ -23,7 +23,14 @@ export default function URLItem(props) {
       <div className="url__right">
         <input className="url__output" ref={inputRef} disabled value={output} />
         {copied ? (
-          <div className="btn btn--clicked">Copied</div>
+          <div
+            className="btn btn--clicked"
+            onClick={() => {
+              handleClick();
+            }}
+          >
+            Copied
+          </div>
         ) : (
           <div
             className="btn btn--url"
