@@ -28,7 +28,7 @@ export default class App extends Component {
     );
   };
   getShortenedURL = async () => {
-    const { input } = this.state;
+    let { input } = this.state;
     const res = await fetch("https://rel.ink/api/links/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -36,17 +36,20 @@ export default class App extends Component {
     }).then(res => res.json());
     const { values } = JSON.parse(JSON.stringify(this.state));
     const ID = this.getUniqueID();
+    if (input.length >= 65) {
+      input = input.substr(0, 65) + "...";
+    }
     values.push({ ID, input, output: `https://rel.ink/${res.hashid}` });
     localStorage.setItem("data", JSON.stringify(values));
     this.setState({ values, input: "", loading: false });
   };
   handleSubmit = async () => {
-    this.setState({ loading: true });
     const { input } = this.state;
     if (input) {
       if (!this.validateUrl(input)) {
         return this.setState({ error: true });
       } else {
+        this.setState({ loading: true });
         this.getShortenedURL();
       }
     } else {

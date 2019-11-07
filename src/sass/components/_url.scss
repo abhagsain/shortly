@@ -25,9 +25,9 @@
   }
 
   &__submitted {
-    overflow: hidden;
-    display: block;
-    text-overflow: ellipsis;
+    // overflow: hidden;
+    // display: block;
+    // text-overflow: "--";
     // white-space: nowrap;
     // border: 2px solid red;
   }
@@ -40,6 +40,7 @@
     color: $color-primary-1;
     border: none;
     background: white;
+    overflow: hidden;
     font-family: inherit;
     width: auto;
     @include respond(tabPort) {
@@ -50,12 +51,17 @@
 
   &__left,
   &__right {
+    width: auto;
+    @include respond(tabLand) {
+      width: 48%;
+    }
     @include respond(tabPort) {
       padding: 2rem;
     }
   }
 
   &__left {
+    overflow: hidden !important;
     @include respond(tabPort) {
       width: 100%;
       // border-bottom: 2px solid $color-secondary-2;
@@ -67,6 +73,10 @@
   &__right {
     display: flex;
     align-items: center;
+    // justify-content: flex-end;
+    @include respond(tabLand) {
+      // justify-content: initial;
+    }
     @include respond(tabPort) {
       width: 100%;
       align-items: flex-start;
